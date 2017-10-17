@@ -1,0 +1,37 @@
+---
+service:
+  name: word-count
+  doc: "A microservice for streaming word count. (sample data by Aesop)"
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: someInputTopic
+        wrapWithMetadata: false
+
+    - operation: splitWhitespace
+      params:
+        src: [sentence]
+        dst: [words]
+
+    - operation: explode
+      params:
+        src: [words]
+        dst: [word]
+
+    - operation: trim
+      params:
+        src: [word]
+
+    - operation: lowerCase
+      params:
+        src: [word]
+
+    - operation: materializeViews
+      params:
+        groupBy:
+          word
+      views:
+        - name: words
+          operation: count
+          params:
+            windowType: global
