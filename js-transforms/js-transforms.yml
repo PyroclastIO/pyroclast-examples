@@ -1,0 +1,19 @@
+---
+service:
+  name: js-transforms
+  doc: "A streaming microservice."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: inputTopic
+        wrapWithMetadata: false
+
+    - operation: customFunction
+      language: javascript
+      params:
+        function: [./src/library.js, fahrenheitToCelsius]
+      doc: "Convert readings from fahrenheit to celsius."
+
+    - operation: writeToTopic
+      params:
+        topicId: outputTopic

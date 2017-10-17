@@ -1,0 +1,20 @@
+---
+service:
+  name: sensor-reading-averages
+  doc: "A microservice that takes the average of sensor readings, grouped by sensor ID."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: someInputTopic
+        wrapWithMetadata: false
+
+    - operation: materializeViews
+      params:
+        groupBy:
+          - sensorId
+      views:
+        - name: totalRecords
+          operation: average
+          params:
+            windowType: global
+            field: reading

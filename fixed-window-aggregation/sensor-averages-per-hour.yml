@@ -1,0 +1,28 @@
+---
+service:
+  name: sensor-averages-per-hour
+  doc: "A microservice that takes the average of sensor readings, grouped by sensor ID, per hour."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: someInputTopic
+        wrapWithMetadata: false
+
+    - operation: parseDatetime
+      params:
+        src: [timestamp]
+        format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+    - operation: materializeViews
+      params:
+        groupBy:
+          - sensorId
+      views:
+        - name: totalRecords
+          operation: average
+          params:
+            windowType: fixed
+            field: reading
+            timestampKey: timestamp
+            rangeDuration: 1
+            rangeUnits: hour

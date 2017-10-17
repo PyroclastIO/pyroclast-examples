@@ -1,0 +1,13 @@
+[
+  {"sensorId": "sensor1", "reading": 50.5, "unit": "fahrenheit", "timestamp": "2017-06-20T20:08:38.178-0700"},
+  {"sensorId": "sensor3", "reading": 73.2, "unit": "fahrenheit", "timestamp": "2017-06-21T10:08:30.772-0700"},
+  {"sensorId": "sensor2", "reading": 14.2, "unit": "fahrenheit", "timestamp": "2017-06-21T07:00:00.396-0700"},
+  {"sensorId": "sensor3", "reading": 73.5, "unit": "fahrenheit", "timestamp": "2017-06-21T07:52:36.578-0700"},
+  {"sensorId": "sensor1", "reading": 51.2, "unit": "fahrenheit", "timestamp": "2017-06-21T07:29:34.013-0700"},
+  {"sensorId": "sensor2", "reading": 14.3, "unit": "fahrenheit", "timestamp": "2017-06-21T03:44:23.903-0700"},
+  {"sensorId": "sensor1", "reading": 51.3, "unit": "fahrenheit", "timestamp": "2017-06-21T10:41:27.823-0700"},
+  {"sensorId": "sensor3", "reading": 75.0, "unit": "fahrenheit", "timestamp": "2017-06-21T08:32:15.842-0700"},
+  {"sensorId": "sensor1", "reading": 50.2, "unit": "fahrenheit", "timestamp": "2017-06-21T10:43:05.627-0700"},
+  {"sensorId": "sensor4", "reading": 80.9, "unit": "fahrenheit", "timestamp": "2017-06-21T13:34:40.838-0700"},
+  {"sensorId": "sensor1", "reading": 53.8, "unit": "fahrenheit", "timestamp": "2017-06-21T09:51:48.062-0700"}
+]

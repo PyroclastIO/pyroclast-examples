@@ -1,0 +1,13 @@
+[
+  {"sensorId": "sensor1", "reading": 50.5, "unit": "fahrenheit"},
+  {"sensorId": "sensor3", "reading": 73.2, "unit": "fahrenheit"},
+  {"sensorId": "sensor2", "reading": 14.2, "unit": "fahrenheit"},
+  {"sensorId": "sensor3", "reading": 73.5, "unit": "fahrenheit"},
+  {"sensorId": "sensor1", "reading": 51.2, "unit": "fahrenheit"},
+  {"sensorId": "sensor2", "reading": 14.3, "unit": "fahrenheit"},
+  {"sensorId": "sensor1", "reading": 51.3, "unit": "fahrenheit"},
+  {"sensorId": "sensor3", "reading": 75.0, "unit": "fahrenheit"},
+  {"sensorId": "sensor1", "reading": 50.2, "unit": "fahrenheit"},
+  {"sensorId": "sensor4", "reading": 80.9, "unit": "fahrenheit"},
+  {"sensorId": "sensor1", "reading": 53.8, "unit": "fahrenheit"}
+]

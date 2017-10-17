@@ -1,0 +1,17 @@
+---
+service:
+  name: temperature-conversion-service
+  doc: "A streaming microservice converted fahrenheit readings to celsius."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: someInputTopic
+        wrapWithMetadata: false
+
+    - operation: trim
+      params:
+        src: [logLine]
+
+    - operation: writeToTopic
+      params:
+        topicId: someOutputTopic
