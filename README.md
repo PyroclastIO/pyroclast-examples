@@ -28,6 +28,18 @@ Lsted in roughly ascending order of concept complexity:
 - [javascript-transformation](javascript-transformation)
   - Uses JavaScript for a custom transformation function.
 
+## Adding a new example
+
+More examples are always appreciated! Follow these steps:
+
+- Fork this repository.
+- Create a new directory for your example.
+- Create a new service: `pyroclast new-service --name <name> --kind <kind>`
+- Fill in the service.
+- Add a sample events JSON file.
+- Add a link from the README to the example directory.
+- Send a pull request.
+
 ## License
 
 Copyright © 2017 Distributed Masonry
