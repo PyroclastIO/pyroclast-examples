@@ -1,6 +1,17 @@
 # pyroclast examples
 
-Here's a few samples of Pyroclast services. They're listed below in roughly ascending order of concept complexity.
+Example Pyroclast services.
+
+## Running the examples
+
+- Clone this repository.
+- `cd` to the directory of the example you want to run.
+- Validate the service file: `pyroclast validate --service <service-file>`
+- Run the service: `pyroclast simulate --service <service-file> --records <event file>`
+
+## The examples
+
+Lsted in roughly ascending order of concept complexity:
 
 - [built-in-transformations](built-in-transformations)
   - Streaming data pipeline using out-of-the-box transformation functions.
