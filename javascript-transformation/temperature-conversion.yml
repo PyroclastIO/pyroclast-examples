@@ -1,7 +1,7 @@
 ---
 service:
-  name: js-transforms
-  doc: "A streaming microservice."
+  name: temperature-conversion
+  doc: "A streaming microservice that converts F to C."
   operations:
     - operation: readFromTopic
       params:
