@@ -1,0 +1,30 @@
+---
+service:
+  name: sensor-averages-sliding-hour
+  doc: "A riff on the fixed window sensor example. This one slides for 1 hour every 10 minutes."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: someInputTopic
+        wrapWithMetadata: false
+
+    - operation: parseDatetime
+      params:
+        src: [timestamp]
+        format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+    - operation: materializeViews
+      params:
+        groupBy:
+          - sensorId
+      views:
+        - name: totalRecords
+          operation: average
+          params:
+            windowType: sliding
+            field: reading
+            timestampKey: timestamp
+            rangeDuration: 1
+            rangeUnits: hour
+            slideDuration: 10
+            slideUnits: minutes
