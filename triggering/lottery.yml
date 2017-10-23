@@ -1,0 +1,30 @@
+---
+service:
+  name: lottery
+  doc: "A streaming microservice."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: lotteryEvents
+        wrapWithMetadata: false
+
+    - operation: reactivelyMaterializeView
+      view:
+        name: lottery
+        operation: customView
+        language: javascript
+        params:
+          windowType: global
+          initializeFunction: [./src/lottery.js, initializeView]
+          updateFunction: [./src/lottery.js, updateView]
+        triggers:
+          - reactingTo: recordArrival
+            params:
+              every: 1
+              flushKeys:
+                - results
+              wrapWithKey: status
+
+    - operation: writeToTopic
+      params:
+        topicId: lotteryResults

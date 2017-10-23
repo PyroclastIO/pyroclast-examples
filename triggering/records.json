@@ -1,0 +1,9 @@
+[
+  {"id": 1, "user": "fred", "action": "takeTicket"},
+  {"id": 2, "user": "mary", "action": "takeTicket"},
+  {"id": 3, "user": "sue", "action": "takeTicket"},
+  {"id": 4, "user": "fred", "action": "takeTicket"},
+  {"id": 5, "user": "jim", "action": "takeTicket"},
+  {"id": 6, "user": "cindy", "action": "takeTicket"},
+  {"action": "restart"}
+]
