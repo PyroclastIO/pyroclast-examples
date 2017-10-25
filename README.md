@@ -11,7 +11,7 @@ Example Pyroclast services.
 
 ## The examples
 
-Lsted in roughly ascending order of concept complexity:
+Listed in roughly ascending order of concept complexity:
 
 - [built-in-transformations](built-in-transformations)
   - Streaming data pipeline using out-of-the-box transformation functions.
