@@ -1,0 +1,18 @@
+---
+service:
+  name: temperature-filter
+  doc: "A streaming microservice that filters out only anomalous temperatures"
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: inputTopic
+        wrapWithMetadata: false
+
+    - operation: customFilter
+      language: javascript
+      params:
+        function: [./src/library.js, onlyHighTemperatures]
+
+    - operation: writeToTopic
+      params:
+        topicId: outputTopic

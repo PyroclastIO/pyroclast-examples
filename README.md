@@ -27,6 +27,10 @@ Lsted in roughly ascending order of concept complexity:
   - Materializes sliding window aggregations by the hour, sliding by 10 minutes.
 - [javascript-transformation](javascript-transformation)
   - Uses JavaScript for a custom transformation function.
+- [javascript-filter](javascript-filter)
+  - Uses JavaScript for a custom filter function.
+- [triggering](triggering)
+  - Materializes an aggregation representing a lottery that emits new events for winners and losers.
 
 ## Adding a new example
 

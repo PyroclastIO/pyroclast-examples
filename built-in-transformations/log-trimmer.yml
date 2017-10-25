@@ -1,7 +1,7 @@
 ---
 service:
-  name: temperature-conversion-service
-  doc: "A streaming microservice converted fahrenheit readings to celsius."
+  name: log-trimmer
+  doc: "A streaming microservice trims log lines and emits them out again."
   operations:
     - operation: readFromTopic
       params:
