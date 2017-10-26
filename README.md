@@ -31,6 +31,8 @@ Listed in roughly ascending order of concept complexity:
   - Uses JavaScript for a custom filter function.
 - [triggering](triggering)
   - Materializes an aggregation representing a lottery that emits new events for winners and losers.
+- [abuse detection](abuse-detection)
+  - Detects upvote abuse of a Reddit-like site, spotting different users upvoting pages from the same IP around the same time. Emits events for suspicious behavior per user and IP address.
 
 ## Adding a new example
 

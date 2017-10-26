@@ -1,0 +1,23 @@
+---
+service:
+  name: upvote-abuse-analytics
+  doc: "A microservice that tracks analytics for possible upvote abuse."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: upvotes
+        wrapWithMetadata: false
+
+    - operation: materializeViews
+      params:
+        groupBy:
+          - ip
+          - page
+      views:
+        - name: upvotesByIpAndPost
+          operation: count
+          params:
+            windowType: fixed
+            timestampKey: timestamp
+            rangeDuration: 1
+            rangeUnits: hour

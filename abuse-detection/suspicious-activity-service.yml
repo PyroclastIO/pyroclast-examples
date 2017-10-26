@@ -1,0 +1,39 @@
+---
+service:
+  name: suspicious-activity-service
+  doc: "A microservice emits events for suspicious user activity."
+  operations:
+    - operation: readFromTopic
+      params:
+        topicId: upvotes
+        wrapWithMetadata: false
+
+    - operation: reactivelyMaterializeView
+      params:
+        groupBy:
+          - ip
+          - page
+      view:
+        name: upvoteAbuse
+        operation: customView
+        language: javascript
+        params:
+          windowType: fixed
+          rangeDuration: 1
+          rangeUnits: hour
+          timestampKey: timestamp
+          initializeFunction: [./src/abuse.js, initializeView]
+          updateFunction: [./src/abuse.js, updateView]
+          args:
+            threshold: 3
+        triggers:
+          - reactingTo: recordArrival
+            params:
+              every: 1
+              flushKeys:
+                - suspiciousUsers
+              wrapWithKey: suspiciousUser
+
+    - operation: writeToTopic
+      params:
+        topicId: suspiciousUsers
